@@ -23,3 +23,45 @@ arr = [3,7,2,9,4]
 #     total = num + total
 #     #shortcut is this total += num
 # print(total)
+
+#Problem 3
+track = arr[0]
+#dont use 0 because what if the array stored negative numbers
+for num in arr:
+    if num > track:
+        track = num
+print(track)
+
+
+# 1. Given [3, 7, 2, 9, 4], print every number > 4.
+
+# 2. Calculate the sum without sum().
+
+# 3. Find the largest number without max().
+#    Must also work with negative numbers.
+
+# 4. Count how many numbers are even.
+
+# 5. Create a function:
+#       double(number)
+#    that RETURNS twice the number.
+
+# 6. Create:
+#       is_even(number)
+#    that returns True or False.
+
+# 7. Create:
+#       find_largest(numbers)
+#    that returns the largest number.
+
+# 8. Create a dictionary containing:
+#       username → "notsudo"
+#       language → "Python"
+#       problems → 0
+
+#    Print the language.
+
+# 9. Change problems from 0 → 1.
+
+# 10. Loop through the dictionary and print
+#     every key and value.
