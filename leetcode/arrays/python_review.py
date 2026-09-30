@@ -27,20 +27,33 @@ arr = [3,7,2,9,4]
 #Problem 3
 track = arr[0]
 #dont use 0 because what if the array stored negative numbers
-for num in arr:
-    if num > track:
-        track = num
-print(track)
+# for num in arr:
+#     if num > track:
+#         track = num
+# print(track)
 
 
 # 1. Given [3, 7, 2, 9, 4], print every number > 4.
-
+list1 = [3,7,2,9,4]
+# for num in list1:
+#     if num > 4:
+#         print(num)
 # 2. Calculate the sum without sum().
+# sum = 0
+# for num in list1:
+#     sum += num
+
+# print(sum)
 
 # 3. Find the largest number without max().
 #    Must also work with negative numbers.
+large_num = list1[0]
+for num in range(len(list1)):
+    if large_num > num:
+        large_num = num
 
 # 4. Count how many numbers are even.
+even_counter = 0
 
 # 5. Create a function:
 #       double(number)
