@@ -37,29 +37,37 @@
 
 
 def is_anagram(s, t):
+
+    if len(s) != len(t):
+        return False
+
     s_count_dict = {}
 
     for char in s:
-        if char in s:
-            s_count_dict += 1
+        if char in s_count_dict:
+            s_count_dict[char] += 1
         else:
-            s_count_dict = 1
-            
+            s_count_dict[char] = 1
+
     t_count_dict = {}
 
     for char in t:
-        if char in t:
-            t_count_dict[char] += 1
+        if char in t_count_dict:
+            t_count_dict[char] +=1
         else:
             t_count_dict[char] = 1
 
+    return s_count_dict == t_count_dict
+
+# This would be 0(n+ M) time complexity and space complexity it all depends on how long the strings are
 
 
-is_anagram("anagram", "nagaram")
+
+print(is_anagram("anagram", "nagaram"))
 # True
 
-is_anagram("rat", "car")
+print(is_anagram("rat", "car"))
 # False
 
-is_anagram("aacc", "ccac")
+print(is_anagram("aacc", "ccac"))
 # False
