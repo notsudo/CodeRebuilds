@@ -63,16 +63,39 @@ async function addTasks() {
 
   taskObj.name = newTask;
   tasks.push(taskObj);
-  console.log(tasks);
   console.log("Task added!");
 }
+
+function viewIncompleteTasks() {
+    console.log("INCOMPLETE TASKS")
+    for (let i = 0; i< tasks.length; i ++) {
+        if (tasks[i].completed == false) {
+            console.log(`${i+1}. ${tasks[i].name}`)
+        }
+    }
+}
+function taskStats() {
+    console.log("TASK STATS")
+    console.log(`Total: ${tasks.length}`);
+    let falseCounter = 0;
+    let trueCounter = 0;
+    for(let i = 0; i< tasks.length; i++) {
+        if(tasks[i].completed == true) {
+            trueCounter += 1
+        } else {
+            falseCounter += 1
+        }
+    }
+    console.log(`Completed: ${trueCounter}`)
+    console.log(`Incomplete: ${falseCounter}`)
+}
 async function editTask() {
-    let editTask = await r1.question("Which task would you like to edit? ")
+    let editTask = await rl.question("Which task would you like to edit? ")
     let numTask = Number(editTask) - 1
     let newName = ""
 
     if (numTask >= 0 && numTask < tasks.length) {
-        newName = ("Enter the new task name: ")
+        newName = await rl.question("Enter the new task name: ")
         tasks[numTask].name = newName
         console.log("Task updated!")
     }else {
@@ -118,7 +141,8 @@ while (numberOption !== 6) {
     viewTasks()
   }
   if (numberOption === 5) {
-    await editTasks()
+    await editTask()
+    viewTasks()
   }
 }
 
