@@ -23,33 +23,63 @@
 # # 7
 
 
-def first_unique(nums):
-    counter = {}
+# def first_unique(nums):
+#     counter = {}
 
-    for num in nums:
-        if num in counter :
-            counter[num] += 1
-        else:
-            counter[num] = 1
-
-
-    for num in counter:
-        # Change this counter to nums because iterating through counter affects time complexity
-        if counter [num] == 1:
-            return num
+#     for num in nums:
+#         if num in counter :
+#             counter[num] += 1
+#         else:
+#             counter[num] = 1
 
 
-
-print(first_unique([4, 5, 4, 6, 5, 7]))
-# 6
-
-print(first_unique([2, 2, 3, 3, 9]))
-# 9
-
-print(first_unique([1, 2, 1, 3, 2]))
-# 3
-
-print(first_unique([1, 1, 2, 2]))
-# None
+#     for num in counter:
+#         # Change this counter to nums because iterating through counter affects time complexity
+#         if counter [num] == 1:
+#             return num
 
 
+
+# print(first_unique([4, 5, 4, 6, 5, 7]))
+# # 6
+
+# print(first_unique([2, 2, 3, 3, 9]))
+# # 9
+
+# print(first_unique([1, 2, 1, 3, 2]))
+# # 3
+
+# print(first_unique([1, 1, 2, 2]))
+# # None
+
+
+def common_elements(nums1, nums2):
+    res = set()
+
+    set1 = set(nums1)
+
+    for n in nums2:
+        if n in set1:
+            res.add(n)
+
+    lres = list(res)
+
+    return(lres)
+
+
+
+
+
+
+
+print(common_elements([1, 2, 2, 3, 4], [2, 2, 4, 6]))
+# [2, 4]
+
+print(common_elements([5, 1, 5, 7], [5, 5, 8]))
+# [5]
+
+print(common_elements([1, 2, 3], [4, 5, 6]))
+# []
+
+print(common_elements([], [1, 2]))
+# []
