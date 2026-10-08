@@ -86,30 +86,61 @@
 
 
 
-def move_zeros(nums):
-    res = []
-    count  = []
-    for n in nums:
-        if n == 0:
-            count.append(n)
-        if n != 0:
-            res.append(n)
-    return res + count
+# def move_zeros(nums):
+#     res = []
+#     count  = []
+#     for n in nums:
+#         if n == 0:
+#             count.append(n)
+#         if n != 0:
+#             res.append(n)
+#     return res + count
 
 
-#o(n) both
+# #o(n) both
 
 
 
 
-print(move_zeros([0, 1, 0, 3, 12]))
-# [1, 3, 12, 0, 0]
+# print(move_zeros([0, 1, 0, 3, 12]))
+# # [1, 3, 12, 0, 0]
 
-print(move_zeros([0, 0, 1]))
-# [1, 0, 0]
+# print(move_zeros([0, 0, 1]))
+# # [1, 0, 0]
 
-print(move_zeros([1, 2, 3]))
-# [1, 2, 3]
+# print(move_zeros([1, 2, 3]))
+# # [1, 2, 3]
 
-print(move_zeros([0]))
-# [0]
+# print(move_zeros([0]))
+# # [0]
+
+
+def two_sum(nums, target):
+    hashset = {}
+
+
+
+    for i, n in enumerate(nums):
+        diff = target - n
+        if diff in hashset:
+            return [hashset[diff], i]
+        else:
+            hashset[n] = i
+
+
+
+
+
+
+
+print(two_sum([2, 7, 11, 15], 9))
+# [0, 1]
+
+print(two_sum([3, 2, 4], 6))
+# [1, 2]
+
+print(two_sum([3, 3], 6))
+# [0, 1]
+
+print(two_sum([1, 2, 3], 10))
+# None
