@@ -53,33 +53,63 @@
 # # None
 
 
-def common_elements(nums1, nums2):
-    res = set()
+# def common_elements(nums1, nums2):
+#     res = set()
 
-    set1 = set(nums1)
+#     set1 = set(nums1)
 
-    for n in nums2:
-        if n in set1:
-            res.add(n)
+#     for n in nums2:
+#         if n in set1:
+#             res.add(n)
 
-    lres = list(res)
+#     lres = list(res)
 
-    return(lres)
-
-
+#     return(lres)
 
 
 
 
 
-print(common_elements([1, 2, 2, 3, 4], [2, 2, 4, 6]))
-# [2, 4]
 
-print(common_elements([5, 1, 5, 7], [5, 5, 8]))
-# [5]
 
-print(common_elements([1, 2, 3], [4, 5, 6]))
-# []
+# print(common_elements([1, 2, 2, 3, 4], [2, 2, 4, 6]))
+# # [2, 4]
 
-print(common_elements([], [1, 2]))
-# []
+# print(common_elements([5, 1, 5, 7], [5, 5, 8]))
+# # [5]
+
+# print(common_elements([1, 2, 3], [4, 5, 6]))
+# # []
+
+# print(common_elements([], [1, 2]))
+# # []
+
+
+
+def move_zeros(nums):
+    res = []
+    count  = []
+    for n in nums:
+        if n == 0:
+            count.append(n)
+        if n != 0:
+            res.append(n)
+    return res + count
+
+
+#o(n) both
+
+
+
+
+print(move_zeros([0, 1, 0, 3, 12]))
+# [1, 3, 12, 0, 0]
+
+print(move_zeros([0, 0, 1]))
+# [1, 0, 0]
+
+print(move_zeros([1, 2, 3]))
+# [1, 2, 3]
+
+print(move_zeros([0]))
+# [0]
