@@ -68,6 +68,24 @@
 
 
 
+def contains_nearby_duplicate(nums, k):
+    seen = { }
+    for i,n in enumerate(nums):
+        if n in seen:
+            if i - seen[n] <= k:
+                return True
+
+        seen[n]= i
+    return False
+#comeback
+
+
+
+
+
+
+# nums = [1, 2, 3, 1]
+# k = 3
 
 
 
@@ -115,17 +133,17 @@
 # # [0]
 
 
-def two_sum(nums, target):
-    hashset = {}
+# def two_sum(nums, target):
+#     hashset = {}
 
 
 
-    for i, n in enumerate(nums):
-        diff = target - n
-        if diff in hashset:
-            return [hashset[diff], i]
-        else:
-            hashset[n] = i
+#     for i, n in enumerate(nums):
+#         diff = target - n
+#         if diff in hashset:
+#             return [hashset[diff], i]
+#         else:
+#             hashset[n] = i
 
 
 
@@ -133,14 +151,14 @@ def two_sum(nums, target):
 
 
 
-print(two_sum([2, 7, 11, 15], 9))
-# [0, 1]
+# print(two_sum([2, 7, 11, 15], 9))
+# # [0, 1]
 
-print(two_sum([3, 2, 4], 6))
-# [1, 2]
+# print(two_sum([3, 2, 4], 6))
+# # [1, 2]
 
-print(two_sum([3, 3], 6))
-# [0, 1]
+# print(two_sum([3, 3], 6))
+# # [0, 1]
 
-print(two_sum([1, 2, 3], 10))
-# None
+# print(two_sum([1, 2, 3], 10))
+# # None
